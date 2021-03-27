@@ -1,0 +1,30 @@
+buildscrpt{
+    ext{
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        }
+}
+
+apply plugin : 'java'
+apply plugin : 'eclipse'
+apply plugin : 'org.spring.framework.boot'
+apply plugin : 'io.spring.dependency-management'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-web')
+
+    testCompile('org,springframework.boot:spring-boot-test')
+}
